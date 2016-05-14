@@ -1,8 +1,18 @@
 import {Component} from '@angular/core';
+
+import {HeaderComponent} from "./header/header.component";
+import {ExerciseComponent} from "./exercise/exercise.component";
+
+
 @Component({
     selector: 'my-app',
     template: `
-        <h1>Gym buddy</h1>
+        <gym-header></gym-header>
+        <gym-exercise></gym-exercise>
+
     `,
+    directives: [HeaderComponent, ExerciseComponent]
 })
+
+
 export class AppComponent {}

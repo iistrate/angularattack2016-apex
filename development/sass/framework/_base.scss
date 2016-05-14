@@ -1,0 +1,77 @@
+/*
+ * General
+*/
+
+/*
+font-family: 'Roboto Slab', serif;
+*/
+
+
+@include global-reset;
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  @include single-transition(all, .5s, ease-in-out);  
+}
+body {
+    font-size: $default;
+    font-family: 'Lato', sans-serif;
+    color: $dark;
+}
+
+.container {
+    @include container;
+    margin:0 auto;
+}
+::-moz-selection {
+    background: green;
+    color:$light;
+}
+::selection {
+    background: green;
+    color:$light;
+}
+a {
+    color: $light;
+    text-decoration: none;
+}
+
+#{headings()} {
+    color: $light;
+    font-family: "Roboto Slab", Arial, sans-serif;
+    font-weight: 100;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+@for $i from 1 through 4 {
+    .padded-#{20*$i} {
+        margin-bottom: (20*$i)+px;
+    }
+}
+
+
+@include keyframes(appear) {
+    from {
+        @include transform(scale(0));
+        opacity:0;
+    }
+    to {
+        @include transform(scale(1));
+        opacity:1;
+    }
+}
+
+.main-content {
+    @include animation(appear .5s ease-in-out);
+}
+
+main.container {
+    padding:2rem 0;
+}

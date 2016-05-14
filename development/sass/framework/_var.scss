@@ -1,0 +1,146 @@
+/*
+ * Global Variables, Extensions, Mixins, and Functions
+ */
+
+$susy: (
+    columns: 12,
+    container: 1200px,
+    gutters: 1/4,
+    gutter-position: outside,
+    global-box-sizing: border-box,
+    debug: (
+      image: hide,
+      color: hsla(332, 28, 49, 50%),
+      output: overlay,
+      toggle: top right,
+    )
+);
+
+$default: 1em;
+
+//colors
+$dark:      #000000;
+$light:     #ffffff;
+$blue:      #2980b9;
+$lightblue: #3498db;
+$darkblue:  #2c3e50;
+$gray:      #ecf0f1;
+$red:       #e74c3c;
+
+//font size
+$small: 0.75em; //12px
+$default: 1em; //16px
+$large: 2.25em; //36px
+
+//breakpoints
+
+// usual resolutions (normal, ipad landscape, ipad portrait, smarthpone l, smartphone s)
+$laptop: 85.5em; // 1368
+$XL: 75em; // 1200
+$L: 64em; // 1024
+$M: 48em; // 768
+$S: 30em; // 480
+$XS: 20em; // 320
+
+// custom resolutions
+$C1: 56.25em; // 900
+$C2: 44em; // 660
+$C3: 85.5em; // 1368
+
+
+/*
+ * Extends
+ */
+
+%displayInline {
+  display:inline-block;
+  *display:inline;
+}//display Inline
+
+%reveal {
+  position:relative;
+  z-index:999;
+}//reveal
+
+%submit {
+  display:block;
+  cursor:pointer;
+  border:none;
+  overflow:hidden;
+  -webkit-appearance: none;
+
+}//submit
+%giveLayout {
+  display:block;
+  overflow:hidden;
+}//giveLayout
+
+/*
+ * Mixins
+ */
+
+// add imageless triangles up or down only
+@mixin triangle($sizeLeft, $sizeRight, $sizeMain, $color, $direction: 'down') {
+  width: 0;
+  height: 0;
+  display:block;
+  @if $direction == 'down' {
+    border-top: $sizeMain solid $color;
+    border-left: $sizeLeft solid transparent;
+    border-right: $sizeRight solid transparent;
+  }
+  @else if $direction == 'left' {
+    border-left: $sizeMain solid $color;
+    border-top: $sizeLeft solid transparent;
+    border-bottom: $sizeRight solid transparent;
+  }
+    @else if $direction == 'right' {
+    border-top: $sizeLeft solid transparent;
+    border-right: $sizeMain solid $color;
+    border-bottom: $sizeRight solid transparent;
+  }
+  @else {
+    border-left: $sizeLeft solid transparent;
+    border-right: $sizeRight solid transparent;
+    border-bottom: $sizeMain solid $color;    
+  }   
+} //triangle
+
+@mixin clearfix() {
+    &:after, &:before {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+    & {
+        *zoom: 1;
+    }
+} //clearfix
+
+@mixin mediaQ($size) {
+  @media only screen and (max-width:$size) {
+    @content;
+  } 
+}
+
+@mixin coverImage ($image) {
+	background: image-url($image);
+	background-repeat: no-repeat;
+	background-position: center center;
+	@include background-size(cover);
+}//cover Image
+
+
+/*
+ * Functions
+ */
+@function px2em($px, $default:16) {
+  $defaultSize: $default;
+  // calculate
+  $em: ($px / $defaultSize);
+  // convert to unit
+  $em: $em * 1em;
+  @return $em;
+}
