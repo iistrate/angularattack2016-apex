@@ -1,1 +1,14 @@
-{{bodyPart}}
+<main class="container" id="progress">
+    <h1>Alright champ, now customize your {{bodyPart}} exercise!</h1>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <fieldset>
+            <textarea id="description" ngControl="description" placeholder="Incline bench using the rubber dumbbells" required></textarea>
+        </fieldset>
+        <fieldset>
+            <input type="number" min="1" max="10" placeholder="Set count" ngControl="sets" required />
+            <input type="number" min="1" max="100" placeholder="Rep count" ngControl="reps" required />
+            <input type="number" min="1" max="2000" placeholder="Weight used" ngControl="weight" required />
+        </fieldset>
+        <button type="submit" [disabled]="!f.valid">Start exercise</button>
+    </form>
+</main>
