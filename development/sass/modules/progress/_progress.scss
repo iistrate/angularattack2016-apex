@@ -1,0 +1,37 @@
+#progress {
+  h1 {
+    margin-bottom: 1rem;
+    line-height: 2rem;
+    color: $dark;
+  }
+}
+
+fieldset {
+  max-width: 6;
+}
+
+.form-common {
+  padding:1rem;
+  margin-bottom: 2rem;
+  border: 1px solid darken($lightblue, 10%);
+  @include border-radius(6px);
+  &:focus {
+    border-color: $lightblue;
+  }
+}
+
+textarea {
+  @include span(12);
+  height:10rem;
+  @extend .form-common;
+}
+
+[type=number] {
+  @include span(4 of 12);
+  padding:1rem;
+  @extend .form-common;
+  &:last-child {
+    @include last;
+  }
+}
+
