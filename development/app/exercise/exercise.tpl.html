@@ -1,4 +1,5 @@
 <main class="container">
+    <h2>What are we going to be working on today?</h2>
     <div class="onoffswitch">
         <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" #switch (change)="switch != switch" checked>
         <label class="onoffswitch-label" for="myonoffswitch">
@@ -6,5 +7,29 @@
             <span class="onoffswitch-switch"></span>
         </label>
     </div>
-    <div id="body" [ngClass]="{back: !switch.checked}" ></div>
+    <div id="body" [ngClass]="{flipped: !switch.checked}" >
+        <div class="left">
+            <a class="arms"></a>
+        </div>
+        <div class="middle">
+            <a class="traps"></a>
+            <template [ngIf]="switch.checked">
+                <a class="chest"></a>
+            </template>
+            <template  [ngIf]="!switch.checked">
+                <a class="back"></a>
+            </template>
+            <a class="core"></a>
+            <template [ngIf]="switch.checked">
+                <a class="quads"></a>
+            </template>
+            <template  [ngIf]="!switch.checked">
+                <a class="hams"></a>
+            </template>
+            <a class="calves"></a>
+        </div>
+        <div class="right">
+            <a class="arms"></a>
+        </div>
+    </div>
 </main><!-- container -->

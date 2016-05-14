@@ -1,12 +1,67 @@
 #body {
-  height: 736px;
-  width: 368px;
+  height: 712px;
+  width: 291px;
+  position: relative;
   background: image-url('body.jpg') no-repeat 0 0;
-  &.back {
-    background-position:  -368px 0;
+  &.flipped {
+    background-position:  -291px 0;
   }
+  a {
+    display: block;
+    position: absolute;
+    border: 1px solid $dark;
+    cursor: pointer;
+    &:hover {
+      border-color: $red;
+    }
+  }
+  overflow: hidden;
 }
 
+.traps {
+  width: 130px;
+  height: 30px;
+  left:77px;
+  top:110px;
+}
+
+.chest, .back {
+  width: 130px;
+  height: 60px;
+  left:77px;
+  top:150px;
+}
+
+.core {
+  width: 130px;
+  height: 90px;
+  left:77px;
+  top:230px;
+}
+
+.arms {
+  width: 70px;
+  height: 250px;
+  left:0;
+  top:110px;
+}
+
+.quads, .hams, .calves {
+  width: 130px;
+  height: 110px;
+  left: 77px;
+  top: 380px;
+}
+.calves {
+  top: 540px;
+}
+
+.right {
+  .arms {
+    left: auto;
+    right: 0;
+  }
+}
 
 
 

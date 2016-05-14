@@ -42,12 +42,20 @@ a {
 #{headings()} {
     color: $light;
     font-family: "Roboto Slab", Arial, sans-serif;
-    font-weight: 100;
+    font-weight: 400;
 }
 
 h1 {
     font-size: 2rem;
     font-weight: 400;
+}
+
+main {
+    h2 {
+        margin-bottom: 1rem;
+        line-height: 2rem;
+        color: $dark;
+    }
 }
 
 @for $i from 1 through 4 {
