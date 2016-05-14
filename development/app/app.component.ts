@@ -21,6 +21,6 @@ import {ProgressComponent} from "./progress/progress.component";
 
 @Routes([
     {path: '/exercise', component: ExerciseComponent},
-    {path: '/progress/:param', component: ProgressComponent},
+    {path: '/progress/:bodyPart', component: ProgressComponent},
 ])
 export class AppComponent {}
