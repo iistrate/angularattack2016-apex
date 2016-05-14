@@ -80,6 +80,19 @@ main {
     @include animation(appear .5s ease-in-out);
 }
 
+
 main.container {
     padding:2rem 0;
+}
+
+#begin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+        padding: 1rem 2rem;
+        margin-right: 1rem;
+        background-color: $red;
+        @include border-radius(6px);
+    }
 }

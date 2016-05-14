@@ -9,27 +9,27 @@
     </div>
     <div id="body" [ngClass]="{flipped: !switch.checked}" >
         <div class="left">
-            <a class="arms"></a>
+            <a [routerLink]="['/progress', 'arms']" class="arms"></a>
         </div>
         <div class="middle">
-            <a class="traps"></a>
+            <a [routerLink]="['/progress', 'arms']" class="traps"></a>
             <template [ngIf]="switch.checked">
-                <a class="chest"></a>
+                <a [routerLink]="['/progress', 'chest']" class="chest"></a>
             </template>
             <template  [ngIf]="!switch.checked">
-                <a class="back"></a>
+                <a [routerLink]="['/progress', 'back']" class="back"></a>
             </template>
-            <a class="core"></a>
+            <a [routerLink]="['/progress', 'arms']" class="core"></a>
             <template [ngIf]="switch.checked">
-                <a class="quads"></a>
+                <a [routerLink]="['/progress', 'quads']" class="quads"></a>
             </template>
             <template  [ngIf]="!switch.checked">
-                <a class="hams"></a>
+                <a [routerLink]="['/progress', 'hams']" class="hams"></a>
             </template>
-            <a class="calves"></a>
+            <a [routerLink]="['/progress', 'calves']" class="calves"></a>
         </div>
         <div class="right">
-            <a class="arms"></a>
+            <a [routerLink]="['/progress', 'arms']" class="arms"></a>
         </div>
     </div>
 </main><!-- container -->

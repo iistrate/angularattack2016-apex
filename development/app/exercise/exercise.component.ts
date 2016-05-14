@@ -1,14 +1,13 @@
 import {Component} from '@angular/core';
-import { ROUTER_DIRECTIVES, Routes } from '@angular/router';
+import { ROUTER_DIRECTIVES} from '@angular/router';
+
+
+import {ProgressComponent} from "../progress/progress.component";
 
 
 @Component({
-    selector: 'gym-exercise',
     templateUrl: 'app/exercise/exercise.tpl.html',
     directives: [ROUTER_DIRECTIVES]
 })
 
-@Routes([
-    {path: '/exercise', component: ExerciseComponent},
-])
 export class ExerciseComponent {}
