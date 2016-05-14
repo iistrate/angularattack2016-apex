@@ -1,4 +1,10 @@
+production
 node_modules
 npm-debug.log
-src/app/**/*.js
-src/app/**/*.js.map
+
+development/**/*.css
+development/**/*.css.map
+typings
+libs
+.sass-cache
+.idea

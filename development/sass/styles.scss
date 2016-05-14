@@ -1,0 +1,98 @@
+@import "compass/reset/utilities";
+@import "compass/css3";
+
+* {
+    @include global-reset;
+    @include box-sizing(border-box);
+}
+
+$mq-small: 40em;
+$mq-xsmall: 28em;
+
+$colors: ('primary1':#9cf);
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+[role=banner] {
+  min-width: 100%;
+  padding: 1rem 2rem;
+  top:0;
+  font-size: 1.5em;
+  position: fixed;
+  display:flex;
+  background: map-get($colors, primary1);
+}
+
+.company-name {
+    margin-right:auto;
+}
+
+form {
+  max-width:$mq-xsmall;
+  margin: auto;
+}
+
+fieldset {
+  margin:auto auto 2rem;
+  padding:1rem;
+  border:1px solid gray;
+}
+
+h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5em;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  padding-bottom: 1rem;
+  font-size: .8em;
+  vertical-align: middle;
+  img {
+    float: left;
+  }
+}
+
+p {
+  position: relative;
+  top:10px;
+  left:10px;
+  float: left;
+}
+
+tfoot {
+  tr {
+    border-top: 1px solid gray;
+  }
+  td {
+    padding-top: 1rem;
+    padding-bottom: 0;
+  }
+}
+
+label {
+  margin-bottom: .5rem;
+  display: block;
+}
+
+
+
+input:not([type=checkbox]) {
+  width:100%;
+  padding:.5rem;
+  display: block;
+  border: 1px solid gray;
+}
+
+#billing-address {
+  height: 0;
+  width:0;
+  opacity:0;
+  overflow: hidden;
+  @include single-transition(all .5s ease);
+}
