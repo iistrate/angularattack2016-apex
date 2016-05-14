@@ -86,13 +86,17 @@ main.container {
 }
 
 #begin {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    a {
-        padding: 1rem 2rem;
-        margin-right: 1rem;
-        background-color: $red;
-        @include border-radius(6px);
+    padding: 2rem 0;
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
+    li {
+        margin-right: 1rem;
+    }
+}
+
+.button, [type=submit] {
+    @include button("simple", "push", 9px, 1.2rem, lighten($darkblue, 10%));
 }

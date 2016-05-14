@@ -4,7 +4,7 @@
 
 $susy: (
     columns: 12,
-    container: 1200px,
+    container: 960px,
     gutters: 1/4,
     gutter-position: outside,
     global-box-sizing: border-box,
@@ -23,7 +23,7 @@ $dark:      #000000;
 $light:     #ffffff;
 $blue:      #2980b9;
 $lightblue: #3498db;
-$darkblue:  #2c3e50;
+$darkblue: #2c3e50;
 $gray:      #ecf0f1;
 $red:       #e74c3c;
 
@@ -143,4 +143,10 @@ $C3: 85.5em; // 1368
   // convert to unit
   $em: $em * 1em;
   @return $em;
+}
+
+@mixin button($style1, $style2, $radius, $fontSize, $color) {
+  @include sassy-button($style1, $radius, $fontSize, lighten($color, 10%));
+  @include sassy-button-style($style2, $color);
+  text-decoration: none;
 }
