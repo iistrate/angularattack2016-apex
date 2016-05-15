@@ -85,17 +85,6 @@ main.container {
     padding:2rem 1rem;
 }
 
-#begin {
-    padding: 2rem 0;
-    ul {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    li {
-        margin-right: 1rem;
-    }
-}
 
 .button, [type=submit] {
     @include button("simple", "push", .8rem, 1.2rem, lighten($darkblue, 10%));
@@ -115,4 +104,16 @@ div#loader {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#begin {
+    padding: 2rem 0;
+    text-align: center;
+    li {
+        margin-right: 1rem;
+        display: inline-block;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
 }
