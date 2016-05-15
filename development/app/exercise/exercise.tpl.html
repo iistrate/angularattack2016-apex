@@ -21,7 +21,7 @@
             <template  [ngIf]="!switch.checked">
                 <a [routerLink]="['/progress', 'back']" class="back"></a>
             </template>
-            <a [routerLink]="['/progress', 'arms']" class="core"></a>
+            <a [routerLink]="['/progress', 'core']" class="core"></a>
             <template [ngIf]="switch.checked">
                 <a [routerLink]="['/progress', 'quads']" class="quads"></a>
             </template>
