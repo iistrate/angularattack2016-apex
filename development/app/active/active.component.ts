@@ -1,6 +1,8 @@
 import {Component, OnInit} from "@angular/core";
 import { OnActivate, RouteSegment, Router } from "@angular/router";
+
 import {Exercise} from "../shared/exercise";
+
 import {ExerciseService} from "../shared/exercise.service";
 import {TimerService} from "../shared/timer.service";
 import {Timer} from "../shared/timer";
@@ -29,10 +31,12 @@ export class ActiveComponent implements OnInit {
         this.isDone = this.exercise.sets-- === 0;
         this.set = String(this.exercise.sets);
         this.clearLapTimer();
+        if (this.isDone) {
+            this.stopTimer();
+        }
     }
 
     onShowResults():void {
-
     }
 
     ngOnInit():any {
@@ -48,6 +52,11 @@ export class ActiveComponent implements OnInit {
             this.timer.formatted = this.timerService.getTimer(this.timer);
         }.bind(this), time);
     }
+
+    stopTimer():void {
+        clearInterval(this.timerHandler);
+    }
+
     startLapTimer(time:number):void {
         this.lapHandler = setInterval(function() {
             this.timerService.updateTimer(this.lap);
@@ -56,7 +65,8 @@ export class ActiveComponent implements OnInit {
     }
 
     clearLapTimer():void {
-        this.lapHandler = 0;
+        clearInterval(this.lapHandler);
+        this.startLapTimer(1000);
         this.lap = new Timer();
     }
 

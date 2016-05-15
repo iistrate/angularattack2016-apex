@@ -98,5 +98,8 @@ main.container {
 }
 
 .button, [type=submit] {
-    @include button("simple", "push", 9px, 1.2rem, lighten($darkblue, 10%));
+    @include button("simple", "push", .8rem, 1.2rem, lighten($darkblue, 10%));
+}
+button {
+    @include button("simple", "push", .5rem, .7rem, lighten($red, 2%));
 }
