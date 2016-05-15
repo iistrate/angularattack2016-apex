@@ -1,3 +1,9 @@
+#home {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 #body {
   height: 712px;
   width: 291px;
@@ -9,7 +15,7 @@
   a {
     display: block;
     position: absolute;
-    border: 1px solid $dark;
+    border: 1px solid $lightblue;
     cursor: pointer;
     &:hover {
       border-color: $red;
@@ -18,22 +24,23 @@
   overflow: hidden;
 }
 
+.traps, .chest, .back, .core, .calves, .quads, .hams {
+  width: 137px;
+}
+
 .traps {
-  width: 130px;
   height: 30px;
   left:77px;
   top:110px;
 }
 
 .chest, .back {
-  width: 130px;
   height: 60px;
   left:77px;
   top:150px;
 }
 
 .core {
-  width: 130px;
   height: 90px;
   left:77px;
   top:230px;
@@ -47,7 +54,6 @@
 }
 
 .quads, .hams, .calves {
-  width: 130px;
   height: 110px;
   left: 77px;
   top: 380px;

@@ -1,11 +1,13 @@
-<main class="container">
-    <h2>What are we going to be working on today?</h2>
-    <div class="onoffswitch">
-        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" #switch (change)="switch != switch" checked>
-        <label class="onoffswitch-label" for="myonoffswitch">
-            <span class="onoffswitch-inner"></span>
-            <span class="onoffswitch-switch"></span>
-        </label>
+<main class="container" id="home">
+    <div>
+        <h2>What are we going to be working on today?</h2>
+        <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" #switch (change)="switch != switch" checked>
+            <label class="onoffswitch-label" for="myonoffswitch">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+            </label>
+        </div>
     </div>
     <div id="body" [ngClass]="{flipped: !switch.checked}" >
         <div class="left">
