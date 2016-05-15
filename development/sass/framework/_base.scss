@@ -24,7 +24,7 @@ body {
 
 .container {
     @include container;
-    margin:0 auto;
+    padding: 0 1rem;
 }
 ::-moz-selection {
     background: green;
@@ -82,7 +82,7 @@ main {
 
 
 main.container {
-    padding:2rem 0;
+    padding:2rem 1rem;
 }
 
 #begin {

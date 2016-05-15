@@ -5,8 +5,9 @@
 $susy: (
     columns: 12,
     container: 960px,
+    container-position: center,
     gutters: 1/4,
-    gutter-position: outside,
+    gutter-position: inside,
     global-box-sizing: border-box,
     debug: (
       image: hide,
