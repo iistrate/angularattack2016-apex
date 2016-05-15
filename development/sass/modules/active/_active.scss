@@ -3,6 +3,9 @@
     margin-bottom: 1rem;
     font-size: 1.5rem;
     max-width: $XS;
+    &:last-of-type {
+      margin-bottom: 2rem;
+    }
   }
   i {
     width: 10rem;
@@ -10,5 +13,18 @@
   }
   span {
     font-weight: 700;
+  }
+  li {
+    margin-bottom: .5rem;
+    &:last-child {
+      margin-bottom: 2rem;
+    }
+  }
+  button {
+    margin-bottom: 2rem;
+  }
+  h2 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
   }
 }
