@@ -21,7 +21,7 @@
       display: inline-block;
       border-radius: 3px;
     }
-    $colors: ('#e74c3c', '#2980b9', '#3498db', '#2c3e50', '#000000', '#ffffff', '#FFCF15', '#573D7D', '#FF5F91', '#532C00');
+    $colors: ('#e74c3c', '#2980b9', '#3498db', '#2c3e50', '#000000', '#00B878', '#FFCF15', '#573D7D', '#FF5F91', '#532C00');
     $i: 1;
     @each $color in $colors {
       &:nth-child(#{$i}) {
