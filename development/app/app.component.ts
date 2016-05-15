@@ -25,6 +25,7 @@ import {ResultsComponent} from "./results/results.component";
 })
 
 @Routes([
+    {path: '/', component: ExerciseComponent},
     {path: '/exercise', component: ExerciseComponent},
     {path: '/progress/:bodyPart', component: ProgressComponent},
     {path: '/active', component: ActiveComponent},
