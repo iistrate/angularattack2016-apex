@@ -39,6 +39,7 @@ fieldset {
   display: flex;
   @include span(6);
   &:last-of-type {
+    flex-direction: column;
     margin-left: 1rem;
   }
 }
