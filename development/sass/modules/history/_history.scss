@@ -1,0 +1,28 @@
+#history {
+  h1 {
+    font-size: 2em;
+    margin-bottom: 2rem;
+    line-height: 2rem;
+    color: $dark;
+  }
+  p {
+    margin-bottom: 1rem;
+    font-size: 1.25em;
+  }
+  li {
+    margin-bottom: 1rem;
+    list-style: decimal;
+    list-style-position: inside;
+    li {
+      margin-bottom: .5rem;
+      padding-left: 5em;
+      list-style: none;
+    }
+    ul {
+      margin-bottom: 1rem;
+    }
+  }
+  span {
+    font-weight: bold;
+  }
+}
