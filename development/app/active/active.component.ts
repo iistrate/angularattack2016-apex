@@ -2,15 +2,18 @@ import {Component, OnInit} from "@angular/core";
 import { OnActivate, RouteSegment, Router } from "@angular/router";
 
 import {Exercise} from "../shared/exercise";
-
 import {ExerciseService} from "../shared/exercise.service";
-import {TimerService} from "../shared/timer.service";
+
 import {Timer} from "../shared/timer";
+import {TimerService} from "../shared/timer.service";
+
+import {Stat} from "../shared/stat";
+import {StatListService} from "../shared/statList.service";
 
 
 @Component({
     templateUrl: 'app/active/active.tpl.html',
-    providers: [ExerciseService, TimerService]
+    providers: [ExerciseService, TimerService, StatListService]
 })
 
 export class ActiveComponent implements OnInit {
@@ -19,17 +22,32 @@ export class ActiveComponent implements OnInit {
     timer: Timer;
     lap: Timer;
     set: string;
+    setCount: number;
+
+    setsStat: Array<{}> = [];
+
     timerHandler;
     lapHandler;
 
-    constructor(private router: Router, private exerciseService: ExerciseService, private timerService: TimerService) {
+
+
+    constructor(private router: Router, private exerciseService: ExerciseService, private timerService: TimerService, private statListService: StatListService) {
         this.timer = new Timer();
         this.lap = new Timer();
+        this.exercise = this.exerciseService.removeFromQueue();
+        this.setCount = this.exercise.sets;
+
     }
 
     onNextSet():void {
-        this.isDone = this.exercise.sets-- === 0;
-        this.set = String(this.exercise.sets);
+        this.isDone = this.setCount-- === 1;
+        this.set = String(this.setCount);
+
+        this.setsStat.push({
+            set: this.setCount,
+            lapTime : this.lap.formatted
+        });
+
         this.clearLapTimer();
         if (this.isDone) {
             this.stopTimer();
@@ -37,15 +55,19 @@ export class ActiveComponent implements OnInit {
     }
 
     onShowResults():void {
+        this.statListService.insertStat(new Stat(this.exercise, this.setsStat));
+        //navigate to the stats page
     }
 
     ngOnInit():any {
-        this.exercise = this.exerciseService.removeFromQueue();
         this.set = String(this.exercise.sets);
         this.startTimer(1000);
         this.startLapTimer(1000);
     }
 
+    /*
+    * Timer functions
+    */
     startTimer(time:number):void {
         this.timerHandler = setInterval(function() {
             this.timerService.updateTimer(this.timer);
