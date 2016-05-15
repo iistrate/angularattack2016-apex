@@ -106,3 +106,13 @@ main.container {
 button {
     @include button("simple", "push", .5rem, .7rem, lighten($red, 2%));
 }
+
+div#loader {
+    height:100%;
+    width:100%;
+    position: absolute;
+    background-color: #b3c430;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
