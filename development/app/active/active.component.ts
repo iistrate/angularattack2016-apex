@@ -43,7 +43,8 @@ export class ActiveComponent implements OnInit {
         this.setsStat.push({
             set: this.setCounter,
             lapTime : this.lap.formatted,
-            time: this.lap.elapsed
+            time: this.lap.elapsed,
+            total: this.timer
         });
 
         this.isDone = this.setCount-- === 1;

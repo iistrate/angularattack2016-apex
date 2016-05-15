@@ -6,7 +6,7 @@ import {ExerciseComponent} from "./exercise/exercise.component";
 import {ProgressComponent} from "./progress/progress.component";
 import {ActiveComponent} from "./active/active.component";
 import {ResultsComponent} from "./results/results.component";
-
+import {HistoryComponent} from "./history/history.component";
 
 @Component({
     selector: 'my-app',
@@ -15,8 +15,7 @@ import {ResultsComponent} from "./results/results.component";
         <nav class="container" id="begin">
             <ul>
                 <li><a [routerLink]="['/exercise']" class="button">Exercise</a></li>
-                <li><a [routerLink]="['/active']" class="button">Active</a></li>
-                <li><a class="button">Stats</a></li>
+                <li><a [routerLink]="['/history']" class="button">History</a></li>
             </ul>
         </nav>
         <router-outlet></router-outlet>
@@ -29,6 +28,7 @@ import {ResultsComponent} from "./results/results.component";
     {path: '/exercise', component: ExerciseComponent},
     {path: '/progress/:bodyPart', component: ProgressComponent},
     {path: '/active', component: ActiveComponent},
-    {path: '/results', component: ResultsComponent}
+    {path: '/results', component: ResultsComponent},
+    {path: '/history', component: HistoryComponent}
 ])
 export class AppComponent {}
