@@ -30,8 +30,6 @@ export class ActiveComponent implements OnInit {
     timerHandler;
     lapHandler;
 
-
-
     constructor(private router: Router, private exerciseService: ExerciseService, private timerService: TimerService, private statListService: StatListService) {
         this.timer = new Timer();
         this.lap = new Timer();
@@ -44,7 +42,8 @@ export class ActiveComponent implements OnInit {
 
         this.setsStat.push({
             set: this.setCounter,
-            lapTime : this.lap.formatted
+            lapTime : this.lap.formatted,
+            time: this.lap.elapsed
         });
 
         this.isDone = this.setCount-- === 1;
