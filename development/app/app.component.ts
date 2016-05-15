@@ -14,6 +14,7 @@ import {ActiveComponent} from "./active/active.component";
         <nav class="container" id="begin">
             <ul>
                 <li><a [routerLink]="['/exercise']" class="button">Exercise</a></li>
+                <li><a [routerLink]="['/active']" class="button">Active</a></li>
                 <li><a class="button">Stats</a></li>
             </ul>
         </nav>
