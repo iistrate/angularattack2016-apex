@@ -37,19 +37,49 @@ fieldset {
   display: flex;
   align-items: stretch;
   margin-bottom: 2rem;
+  @media screen and (max-width: $M) {
+    @include full;
+    display: block;
+  }
 }
 fieldset {
   display: flex;
   @include span(6);
+  @media screen and (max-width: $M) {
+    @include full;
+    display: block;
+  }
   &:last-of-type {
     flex-direction: column;
     margin-left: 1rem;
+    @media screen and (max-width: $M) {
+      margin-left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $M) {
+  form {
+    text-align: center;
+    fieldset {
+      text-align: left;
+    }
+  }
+  [type=submit] {
+    position: relative;
+    left: 50%;
+    margin-left: -90px;
+    margin-bottom: 1rem;
+    display: block;
   }
 }
 
 textarea {
   width: 100%;
   @extend .form-common;
+  @media screen and (max-width: $M) {
+    margin-bottom: 1rem;
+  }
 }
 
 [type=number] {
@@ -59,6 +89,9 @@ textarea {
   @extend .form-common;
   &:last-of-type {
     margin-bottom: 0;
+  }
+  @media screen and (max-width: $M) {
+    margin-bottom: 1rem;
   }
 }
 
