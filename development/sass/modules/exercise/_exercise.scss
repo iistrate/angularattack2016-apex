@@ -64,8 +64,7 @@
 }
 
 
-
-
+/*https://proto.io/freebies/onoff/*/
 .onoffswitch {
   position: relative; width: 90px;
   -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
@@ -99,6 +98,7 @@
 }
 .onoffswitch-switch {
   display: block; width: 38px; margin: -4px;
+  height:40px;
   background: #E74C3C;
   position: absolute; top: 0; bottom: 0;
   right: 56px;
