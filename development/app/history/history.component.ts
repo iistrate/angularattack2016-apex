@@ -40,6 +40,5 @@ export class HistoryComponent {
     stats: Array<{}>;
     constructor() {
         this.stats = statList;
-        console.log(this.stats);
     }
 }
