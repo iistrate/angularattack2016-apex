@@ -6,17 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gym Buddy</title>
   <link rel="stylesheet" href="css/styles.css">
-  <script src="libs/zone.js"></script>
-  <script src="libs/typescript.js"></script>
-  <script src="libs/Reflect.js"></script>
-  <script src="libs/system.src.js"></script>
+  <script src="https://rumblex.s3.amazonaws.com/starter/es6-shim/es6-shim.min.js"></script>
+  <script src="https://rumblex.s3.amazonaws.com/starter/zone.js/dist/zone.js"></script>
+  <script src="https://rumblex.s3.amazonaws.com/starter/reflect-metadata/Reflect.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/1.9.0/typescript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.27/system.src.js"></script>
   <script src="js/script.js"></script>
   <script>
-    System.import('app').catch(function (err) {console.error(err);});
+    document.addEventListener('DOMContentLoaded', function() {
+      System.import('app').catch(function (err) {console.error(err);});
+    })
   </script>
 </head>
 <body>
-  <my-app>Loading...</my-app>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+<my-app>Loading...</my-app>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
 </body>
 </html>
