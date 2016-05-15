@@ -14,12 +14,12 @@ System.config({
     },
     packages: {
         'app'                              : {main: 'main', defaultExtension: 'js'},
-        'rxjs'                             : {main: 'index.js'},
-        '@angular/core'                    : {main: 'index.js'},
-        '@angular/common'                  : {main: 'index.js'},
-        '@angular/compiler'                : {main: 'index.js'},
-        '@angular/router'                  : {main: 'index.js'},
-        '@angular/platform-browser'        : {main: 'index.js'},
-        '@angular/platform-browser-dynamic': {main: 'index.js'}
+        'rxjs'                             : {main: 'Rx.umd.js'},
+        '@angular/core'                    : {main: 'core.umd.js'},
+        '@angular/common'                  : {main: 'common.umd.js'},
+        '@angular/compiler'                : {main: 'compiler.umd.js'},
+        '@angular/router'                  : {main: 'router.umd.js'},
+        '@angular/platform-browser'        : {main: 'platform-browser.umd.js'},
+        '@angular/platform-browser-dynamic': {main: 'platform-browser-dynamic.umd.js'}
     }
 });
