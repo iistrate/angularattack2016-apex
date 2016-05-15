@@ -21,7 +21,7 @@ export class ProgressComponent implements OnInit {
             f.controls['description'].value,
             +f.controls['sets'].value,
             +f.controls['reps'].value,
-            f.controls['weight'].value
+            +f.controls['weight'].value
         ));
         this.router.navigate(['/active']);
     }
