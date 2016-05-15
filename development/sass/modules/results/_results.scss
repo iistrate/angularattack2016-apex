@@ -1,0 +1,17 @@
+#results {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  h1 {
+    margin-bottom: 2rem;
+    line-height: 1.5rem;
+    color: $dark;
+  }
+  ol {
+    padding: 2rem 0;
+    text-align: center;
+  }
+  li {
+    margin-bottom: .5rem;
+  }
+}
