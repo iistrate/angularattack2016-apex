@@ -29,6 +29,9 @@ fieldset {
   &:focus {
     border-color: $lightblue;
   }
+  &.ng-invalid {
+    border-color: darken($red, 10%);
+  }
 }
 .stretch {
   display: flex;

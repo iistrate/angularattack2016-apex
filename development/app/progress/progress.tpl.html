@@ -4,9 +4,9 @@
         <div class="stretch">
             <textarea id="description" ngControl="description" placeholder="Incline bench using the rubber dumbbells" required></textarea>
             <fieldset>
-                <input type="number" min="1" max="10" placeholder="Set count" ngControl="sets" required #sets (keyup)="0" />
-                <input type="number" min="1" max="100" placeholder="Rep count" ngControl="reps" required #reps (keyup)="0" />
-                <input type="number" min="1" max="2000" placeholder="Weight used" ngControl="weight" required #weight (keyup)="0" />
+                <input type="number" min="1" max="10" placeholder="Set count (1-10)" ngControl="sets" required #sets (keyup)="0" />
+                <input type="number" min="1" max="100" placeholder="Rep count (1-100)" ngControl="reps" required #reps (keyup)="0" />
+                <input type="number" min="1" max="2000" placeholder="Weight used (1-2000)" ngControl="weight" required #weight (keyup)="0" />
             </fieldset>
         </div>
         <button type="submit" [disabled]="!f.valid">Start exercise</button>
