@@ -29,5 +29,6 @@ export class TimerService {
 
         timer.formatted = fHours + ':' + fMinutes + ':' + fSeconds;
 
+        timer.elapsed +=10;
     }
 }
