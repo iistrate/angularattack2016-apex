@@ -5,6 +5,7 @@ import {HeaderComponent} from "./header/header.component";
 import {ExerciseComponent} from "./exercise/exercise.component";
 import {ProgressComponent} from "./progress/progress.component";
 import {ActiveComponent} from "./active/active.component";
+import {ResultsComponent} from "./results/results.component";
 
 
 @Component({
@@ -27,5 +28,6 @@ import {ActiveComponent} from "./active/active.component";
     {path: '/exercise', component: ExerciseComponent},
     {path: '/progress/:bodyPart', component: ProgressComponent},
     {path: '/active', component: ActiveComponent},
+    {path: '/results', component: ResultsComponent}
 ])
 export class AppComponent {}

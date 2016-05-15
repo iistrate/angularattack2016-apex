@@ -23,6 +23,7 @@ export class ActiveComponent implements OnInit {
     lap: Timer;
     set: string;
     setCount: number;
+    setCounter: number;
 
     setsStat: Array<{}> = [];
 
@@ -36,17 +37,19 @@ export class ActiveComponent implements OnInit {
         this.lap = new Timer();
         this.exercise = this.exerciseService.removeFromQueue();
         this.setCount = this.exercise.sets;
-
+        this.setCounter = 1;
     }
 
     onNextSet():void {
-        this.isDone = this.setCount-- === 1;
-        this.set = String(this.setCount);
 
         this.setsStat.push({
-            set: this.setCount,
+            set: this.setCounter,
             lapTime : this.lap.formatted
         });
+
+        this.isDone = this.setCount-- === 1;
+        this.set = String(this.setCount);
+        this.setCounter++;
 
         this.clearLapTimer();
         if (this.isDone) {
@@ -56,7 +59,7 @@ export class ActiveComponent implements OnInit {
 
     onShowResults():void {
         this.statListService.insertStat(new Stat(this.exercise, this.setsStat));
-        //navigate to the stats page
+        this.router.navigate(['/results']);
     }
 
     ngOnInit():any {

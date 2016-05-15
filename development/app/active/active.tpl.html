@@ -13,6 +13,16 @@
     </template>
     <template [ngIf]="isDone">
         <h2>Good job tiger!</h2>
+    </template>
+    <template [ngIf]="setsStat.length">
+        <ul>
+            <li *ngFor="let item of setsStat">
+                <span>Set {{item.set}}</span>
+                <span>Time: {{item.lapTime}}</span>
+            </li>
+        </ul>
+    </template>
+    <template [ngIf]="isDone">
         <button (click)="onShowResults()">Show results</button>
     </template>
 </main>
