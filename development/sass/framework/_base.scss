@@ -99,6 +99,9 @@ main.container {
 
 .button, [type=submit] {
     @include button("simple", "push", .8rem, 1.2rem, lighten($darkblue, 10%));
+    &.router-link-active {
+        @include button("simple", "push", .8rem, 1.2rem, $red);
+    }
 }
 button {
     @include button("simple", "push", .5rem, .7rem, lighten($red, 2%));

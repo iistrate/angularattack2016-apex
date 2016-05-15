@@ -1,8 +1,20 @@
 #progress {
   h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
     line-height: 2rem;
     color: $dark;
+  }
+  span {
+    margin: 0 .5rem;
+    font-weight: bold;
+  }
+  button {
+    margin-right: 1rem;
+  }
+  em {
+    color: $darkblue;
+    border-bottom: 1px dashed $darkblue;
   }
 }
 
@@ -12,26 +24,38 @@ fieldset {
 
 .form-common {
   padding:1rem;
-  margin-bottom: 2rem;
   border: 1px solid darken($lightblue, 10%);
   @include border-radius(6px);
   &:focus {
     border-color: $lightblue;
   }
 }
+.stretch {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 2rem;
+}
+fieldset {
+  display: flex;
+  @include span(6);
+  &:last-of-type {
+    margin-left: 1rem;
+  }
+}
 
 textarea {
-  @include span(12);
-  height:10rem;
+  width: 100%;
   @extend .form-common;
 }
 
 [type=number] {
-  @include span(4 of 12);
+  width: 100%;
   padding:1rem;
+  margin-bottom: 1rem;
   @extend .form-common;
-  &:last-child {
-    @include last;
+  &:last-of-type {
+    margin-bottom: 0;
   }
 }
+
 
