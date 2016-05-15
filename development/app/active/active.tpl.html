@@ -1,1 +1,12 @@
-ACTIVE
+<main id="active" class="container">
+    <div id="timer">Exercise time: <span>{{timer.formatted}}</span></div>
+    <template [ngIf]="!isDone">
+        <div id="lap">Set time: <span>{{lap.formatted}}</span></div>
+        <div id="set">{{set}}</div>
+        <button (click)="onNextSet()">Next set</button>
+    </template>
+    <template [ngIf]="isDone">
+        <h2>Good job tiger!</h2>
+        <button (click)="onShowResults()">Show results</button>
+    </template>
+</main>
