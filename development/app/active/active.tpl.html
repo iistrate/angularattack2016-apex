@@ -1,8 +1,14 @@
 <main id="active" class="container">
-    <div id="timer">Exercise time: <span>{{timer.formatted}}</span></div>
+    <div id="timer">
+        <i>Exercise time:</i>
+        <span>{{timer.formatted}}</span></div>
     <template [ngIf]="!isDone">
-        <div id="lap">Set time: <span>{{lap.formatted}}</span></div>
-        <div id="set">Sets to go: {{set}}</div>
+        <div id="lap">
+            <i>Set time:</i> <span>{{lap.formatted}}</span>
+        </div>
+        <div id="set">
+            <i>Sets to go:</i> <span>{{set}}</span>
+        </div>
         <button (click)="onNextSet()">Next set</button>
     </template>
     <template [ngIf]="isDone">
